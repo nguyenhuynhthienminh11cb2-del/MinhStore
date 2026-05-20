@@ -1,0 +1,878 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+/* ========= HEADER & NAVIGATION ========= */
+header {
+    background: linear-gradient(135deg, #0f2c3f 0%, #1e3a5f 100%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #fff, #ffd966);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo p {
+    font-size: 0.75rem;
+    opacity: 0.85;
+}
+
+nav ul.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul.menu li {
+    position: relative;
+}
+
+nav ul.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+nav ul.menu li a:hover {
+    color: #ffd966;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ========= USER DROPDOWN ========= */
+.user-menu {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: #0f2c3f;
+    min-width: 160px;
+    border-radius: 12px;
+    display: none;
+    list-style: none;
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+nav ul.menu li:hover .user-menu {
+    display: block;
+}
+
+.user-menu li a {
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+/* ========= HERO SECTION ========= */
+.hero {
+    background: linear-gradient(135deg, #d4e6f1, #e8f0fe);
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #0b2b40;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+    background: #ff914d;
+    color: white;
+    border: none;
+    padding: 0.8rem 2.2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #e67e22;
+    transform: scale(1.05);
+}
+
+/* ========= SẢN PHẨM ========= */
+.products, .products-page {
+    padding: 2rem 5%;
+}
+
+.products h2, .products-page h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #ff914d;
+    padding-left: 1rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #eef2ff;
+}
+
+.product-card h3 {
+    margin: 0.8rem 0 0.3rem;
+    font-size: 1.1rem;
+}
+
+.product-card .price {
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.product-card button {
+    background: #ff914d;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+    margin-top: 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+}
+
+.product-card button:hover {
+    background: #e67e22;
+    transform: scale(1.02);
+}
+
+/* ========= FILTER DANH MỤC ========= */
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1.5rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.filter-btn.active {
+    background: #1e3a5f;
+    color: white;
+    border-color: #1e3a5f;
+}
+
+.filter-btn:hover {
+    background: #ff914d;
+    color: white;
+    border-color: #ff914d;
+}
+
+/* ========= GIỎ HÀNG ========= */
+.cart-section {
+    padding: 2rem 5%;
+    min-height: 60vh;
+}
+
+.cart-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #ff914d;
+    padding-left: 1rem;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cart-items {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #f0f0f0;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    margin-bottom: 0.3rem;
+}
+
+.cart-item-info p {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-item-quantity button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-item-quantity button:hover {
+    background: #ff914d;
+    color: white;
+}
+
+.cart-item-total {
+    font-weight: bold;
+    min-width: 100px;
+    text-align: right;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    opacity: 1;
+    color: red;
+}
+
+.cart-summary {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.cart-summary h3 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ff914d;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-top: 2px solid #eee;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #ff914d;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover:not(:disabled) {
+    background: #e67e22;
+    transform: scale(1.02);
+}
+
+.checkout-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.login-warning {
+    background: #fff3cd;
+    color: #856404;
+    padding: 0.8rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.login-warning a {
+    color: #e67e22;
+}
+
+.notification {
+    background: #4caf50;
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: none;
+    animation: fadeOut 2s ease;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+/* ========= ĐĂNG KÝ / ĐĂNG NHẬP ========= */
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 2rem;
+}
+
+.auth-container {
+    background: white;
+    border-radius: 32px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1e3a5f;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff914d;
+    box-shadow: 0 0 0 3px rgba(255, 145, 77, 0.2);
+}
+
+.auth-btn {
+    width: 100%;
+    background: #1e3a5f;
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #ff914d;
+    transform: scale(1.02);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-link a {
+    color: #ff914d;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.msg {
+    padding: 0.8rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.msg.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.msg.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* ========= TRANG LAB THỰC HÀNH ========= */
+.labthuchanh-section {
+    padding: 2rem 5%;
+    background: #f0f4f8;
+    min-height: 70vh;
+}
+
+.labthuchanh-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.labthuchanh-section h1 {
+    font-size: 2rem;
+    color: #1e3a5f;
+    margin-bottom: 0.5rem;
+}
+
+.lab-desc {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.lab-card-large {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #ff914d;
+}
+
+.lab-card-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.lab-icon {
+    font-size: 2.5rem;
+}
+
+.lab-info h3 {
+    color: #1e3a5f;
+    margin-bottom: 0.5rem;
+}
+
+.lab-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.lab-count {
+    display: inline-block;
+    background: #eef2ff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #1e3a5f;
+}
+
+/* ========= TRANG CHI TIẾT LAB (danh sách bài tập) ========= */
+.lab-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.lab-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1e3a5f;
+}
+
+.lab-nav {
+    background: #eef2ff;
+    padding: 1rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lab-nav-left a, .lab-nav-right a {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #1e3a5f;
+    transition: 0.2s;
+    margin-right: 0.5rem;
+}
+
+.lab-nav-left a:hover, .lab-nav-right a:hover {
+    background: #1e3a5f;
+    color: white;
+}
+
+.bai-tap-list {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.bai-tap-list h2 {
+    color: #1e3a5f;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #ff914d;
+    padding-left: 1rem;
+}
+
+.bai-tap-list ul {
+    list-style: none;
+}
+
+.bai-tap-list li {
+    margin: 0.8rem 0;
+    padding: 0.8rem 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    transition: 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.bai-tap-list li:hover {
+    background: #e2e8f0;
+    transform: translateX(5px);
+    border-left-color: #ff914d;
+}
+
+.bai-tap-list li a {
+    text-decoration: none;
+    color: #1e5f7a;
+    font-weight: 500;
+    display: block;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 2rem;
+    background: #e2e8f0;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #1e293b;
+    transition: 0.2s;
+}
+
+.back-home:hover {
+    background: #cbd5e1;
+}
+
+/* ========= TRANG BÀI TẬP CHI TIẾT ========= */
+.bai-tap-detail {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 28px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.bai-tap-detail h1 {
+    color: #1e3a5f;
+    margin-bottom: 1rem;
+}
+
+.bai-tap-detail .noi-dung {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    min-height: 200px;
+}
+
+.bai-tap-detail .noi-dung h2 {
+    margin: 1rem 0 0.5rem;
+    color: #2c3e50;
+}
+
+.bai-tap-detail .noi-dung h2:first-child {
+    margin-top: 0;
+}
+
+.bai-tap-detail .noi-dung code {
+    background: #e2e8f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+.bai-tap-detail .noi-dung ul, 
+.bai-tap-detail .noi-dung ol {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.btn-back-lab {
+    background: #1e5f7a;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 1rem;
+    transition: 0.2s;
+}
+
+.btn-back-lab:hover {
+    background: #0f3b4f;
+}
+
+.thong-tin-lab {
+    background: #eef2ff;
+    padding: 1rem;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* ========= FOOTER ========= */
+footer {
+    background: #0f2c3f;
+    color: #adb7c4;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul.menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cart-item-total {
+        text-align: center;
+    }
+    
+    .category-filter {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.3rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .products, .products-page, .cart-section {
+        padding: 1rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    
+    .product-card img {
+        height: 120px;
+    }
+    
+    .lab-container h1 {
+        font-size: 1.5rem;
+    }
+    /* ========= HIỆU ỨNG CHO THÔNG BÁO ========= */
+.msg {
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.msg.success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border-left: 5px solid #28a745;
+}
+
+.msg.error {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+}
+
+/* Hiệu ứng nhấp nháy nhẹ khi mới xuất hiện */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.msg {
+    animation: slideDown 0.4s ease-out;
+}
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - MinhStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2>MinhStore</h2>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="sanpham.html">Sản phẩm</a></li>
+            <li><a href="labthuchanh.html">Lab thực hành</a></li>
+            <li><a href="giohang.html">Giỏ hàng (<span id="cartCount">0</span>)</a></li>
+            <li><a href="dangnhap.html" id="authLink">Đăng nhập</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="products-page">
+    <div class="container">
+        <h1>Tất cả sản phẩm</h1>
+        
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">Tất cả</button>
+            <button class="filter-btn" data-category="but">Bút viết</button>
+            <button class="filter-btn" data-category="vo">Vở & giấy</button>
+            <button class="filter-btn" data-category="balo">Balo & túi</button>
+            <button class="filter-btn" data-category="thietbi">Thiết bị & máy tính</button>
+            <button class="filter-btn" data-category="phuongtien">Dụng cụ khác</button>
+        </div>
+        
+        <div class="product-grid" id="allProducts">
+            <!-- Sản phẩm sẽ load từ JS -->
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 MinhStore - Hỗ trợ học tập IT</p>
+</footer>
+
+<script src="js/taikhoan.js"></script>
+<script src="js/giohang.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

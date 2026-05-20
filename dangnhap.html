@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - MinhStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2>MinhStore</h2>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="sanpham.html">Sản phẩm</a></li>
+            <li><a href="labthuchanh.html">Lab thực hành</a></li>
+            <li><a href="giohang.html">🛒 Giỏ hàng</a></li>
+            <li><a href="dangky.html">Đăng ký</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="auth-section">
+    <div class="auth-container">
+        <h1>Đăng nhập</h1>
+        
+        <div id="loginMsg" class="msg"></div>
+        
+        <form id="loginForm" novalidate>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="example@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label>Mật khẩu</label>
+                <input type="password" id="loginPassword" placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="auth-btn">Đăng nhập</button>
+        </form>
+        
+        <p class="auth-link">Chưa có tài khoản? <a href="dangky.html">Đăng ký ngay</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 MinhStore - Hỗ trợ học tập IT</p>
+</footer>
+
+<script src="js/taikhoan.js"></script>
+</body>
+</html>

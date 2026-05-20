@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinhStore - Dụng cụ học tập</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2>MinhStore</h2>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="sanpham.html">Sản phẩm</a></li>
+            <li><a href="labthuchanh.html">Lab thực hành</a></li>
+            <li><a href="giohang.html" class="cart-link">Giỏ hàng (<span id="cartCount">0</span>)</a></li>
+            <li><a href="dangnhap.html" id="authLink">Đăng nhập</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Dụng cụ học tập đỉnh cao</h1>
+        <p>Giá tốt - Giao nhanh - Hỗ trợ lập trình viên tương lai</p>
+        <a href="sanpham.html" class="hero-btn">Mua ngay</a>
+    </div>
+</section>
+
+<section class="products">
+    <h2>Sản phẩm tiêu biểu</h2>
+    <div class="product-grid" id="featuredProducts">
+        <!-- Sản phẩm sẽ được load bằng JS -->
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 MinhStore - Hỗ trợ học tập IT</p>
+</footer>
+
+<script src="js/taikhoan.js"></script>
+<script src="js/giohang.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

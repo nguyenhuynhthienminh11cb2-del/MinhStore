@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - MinhStore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2>MinhStore</h2>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="sanpham.html">Sản phẩm</a></li>
+            <li><a href="labthuchanh.html">Lab thực hành</a></li>
+            <li><a href="giohang.html">🛒 Giỏ hàng (<span id="cartCount">0</span>)</a></li>
+            <li><a href="dangnhap.html" id="authLink">Đăng nhập</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="cart-section">
+    <div class="container">
+        <h1>🛒 Giỏ hàng của bạn</h1>
+        
+        <div id="cartNotification" class="notification"></div>
+        
+        <div class="cart-layout">
+            <div class="cart-items" id="cartItems">
+                <!-- Danh sách sản phẩm trong giỏ -->
+            </div>
+            
+            <div class="cart-summary">
+                <h3>Tổng đơn hàng</h3>
+                <div class="summary-row">
+                    <span>Tạm tính:</span>
+                    <span id="subtotal">0đ</span>
+                </div>
+                <div class="summary-row">
+                    <span>Phí vận chuyển:</span>
+                    <span>30.000đ</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Tổng cộng:</span>
+                    <span id="total">0đ</span>
+                </div>
+                
+                <div id="loginRequiredMsg" class="login-warning" style="display:none;">
+                    Vui lòng <a href="dangnhap.html">đăng nhập</a> để thanh toán
+                </div>
+                
+                <button id="checkoutBtn" class="checkout-btn" disabled>Thanh toán</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 MinhStore - Hỗ trợ học tập IT</p>
+</footer>
+
+<script src="js/taikhoan.js"></script>
+<script src="js/giohang.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
